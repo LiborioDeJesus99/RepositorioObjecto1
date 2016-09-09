@@ -9,6 +9,9 @@ package clase;
  *
  * @author liborio
  */
-public class Helper {
-    
+public class DenominadorCeroException extends Exception {
+
+    public DenominadorCeroException() {
+        super("No Se Permiten Denominadores En Cero");
+    }
 }
