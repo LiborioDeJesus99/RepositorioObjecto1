@@ -56,21 +56,43 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setText("Numeros Con Fraccionarios Y Mixtos");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
+        txtNumera1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumera1ActionPerformed(evt);
+            }
+        });
         txtNumera1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNumera1KeyTyped(evt);
             }
         });
         jPanel3.add(txtNumera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 70, 30));
+
+        txtDenomina1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDenomina1KeyTyped(evt);
+            }
+        });
         jPanel3.add(txtDenomina1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 70, 30));
 
         cmbOper.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suma", "Resta", "Multiplicación ", "División" }));
         jPanel3.add(cmbOper, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, 30));
+
+        txtNumera2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNumera2KeyTyped(evt);
+            }
+        });
         jPanel3.add(txtNumera2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 70, 30));
 
         txtDenomina2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDenomina2ActionPerformed(evt);
+            }
+        });
+        txtDenomina2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDenomina2KeyTyped(evt);
             }
         });
         jPanel3.add(txtDenomina2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 110, 70, 30));
@@ -134,7 +156,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void txtNumera1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumera1KeyTyped
 
-        
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+
     }//GEN-LAST:event_txtNumera1KeyTyped
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
@@ -208,6 +236,40 @@ public class Principal extends javax.swing.JFrame {
         txtMix.setText("");
         txtNumera1.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
+
+    private void txtNumera1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumera1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumera1ActionPerformed
+
+    private void txtNumera2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumera2KeyTyped
+
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNumera2KeyTyped
+
+    private void txtDenomina1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDenomina1KeyTyped
+
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDenomina1KeyTyped
+
+    private void txtDenomina2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDenomina2KeyTyped
+
+        char c = evt.getKeyChar();
+
+        if (!Character.isDigit(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDenomina2KeyTyped
 
     /**
      * @param args the command line arguments
